@@ -1,0 +1,23 @@
+syntax = "proto3";
+
+package grpcapi;
+option java_multiple_files = true;
+option java_package = "com.grpcapi";
+option java_outer_classname = "BikeDetailsProto";
+service YamahaService {
+  // RPC for adding a bike
+  rpc addBike (AddBikeRequest) returns (AddBikeResponse); // Unary
+}
+
+// Request to add a bike
+message AddBikeRequest {
+  string model = 1;          // Model of the bike
+  string date = 2;           // LocalDateTime as ISO-8601 string (e.g., "2025-04-07T15:51:00")
+  string bike_name = 3;      // Bike name
+  double price = 4;          // Price of the bike
+}
+
+// Response after adding a bike
+message AddBikeResponse {
+  string message = 1;        // Success or failure message
+}

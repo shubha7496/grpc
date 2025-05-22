@@ -1,0 +1,5 @@
+grpc:
+  server:
+    port: 9191  # Replace 9090 with the desired port number
+
+    enable-reflection: true
